@@ -1,0 +1,61 @@
+:root{--ink:#2a1230;--berry:#7a1f5c;--lemon:#ffd93d;--lemon-soft:#fff6c9;--leaf:#2f7d4f;--bg:#fffdf6;--line:#e8dfc8}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;font-family:"Bricolage Grotesque",system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.55}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--berry);outline-offset:2px}
+.top{position:sticky;top:0;z-index:5;display:flex;gap:1rem;align-items:center;flex-wrap:wrap;padding:.6rem 1.2rem;background:var(--lemon);border-bottom:2px solid var(--ink)}
+.logo{font-weight:800;font-size:1.3rem;text-decoration:none;margin-right:auto}
+#menu{display:flex;gap:1rem;flex-wrap:wrap}
+#menu a{text-decoration:none;font-weight:600}
+#menu a:hover{text-decoration:underline}
+.acc{display:flex;gap:.5rem;align-items:center}
+button,.btn{font:inherit;font-weight:600;background:var(--berry);color:#fff;border:2px solid var(--berry);padding:.5rem 1rem;border-radius:999px;cursor:pointer;text-decoration:none;display:inline-block}
+button.ghost{background:transparent;color:var(--ink);border-color:var(--ink)}
+button.wide{width:100%;margin-top:.5rem}
+section{padding:3.5rem 1.2rem;max-width:1100px;margin:auto}
+.band{max-width:none;background:var(--lemon-soft);border-block:2px solid var(--line)}
+.band>*{max-width:1100px;margin-inline:auto}
+h1{font-size:clamp(2rem,5vw,3.6rem);line-height:1.05;margin:0 0 1rem;font-weight:800;max-width:16ch}
+h2{font-size:2rem;margin:0 0 1.2rem}
+.hero{display:grid;grid-template-columns:1.3fr 1fr;gap:2rem;align-items:center;min-height:70vh}
+.hero p{max-width:40ch;font-size:1.15rem}
+.jar{display:flex;justify-content:center;gap:.5rem;font-size:4.5rem}
+.jar span{animation:bob 3s ease-in-out infinite}
+.jar span:nth-child(2){animation-delay:.4s}.jar span:nth-child(3){animation-delay:.8s}
+@keyframes bob{50%{transform:translateY(-14px)}}
+.filtros{display:flex;gap:.5rem;margin-bottom:1rem}
+.chip{background:#fff;color:var(--ink);border-color:var(--line)}
+.chip.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.layout{display:grid;grid-template-columns:1fr 330px;gap:1.5rem;align-items:start}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:1rem}
+.card{background:#fff;border:2px solid var(--ink);border-radius:18px;padding:1rem;display:flex;flex-direction:column;gap:.3rem}
+.card .em{font-size:3rem}
+.card h4{margin:0}
+.card p{margin:0;font-size:.92rem;flex:1}
+.card .pr{font-weight:800;color:var(--berry);font-size:1.1rem}
+.carrito{position:sticky;top:80px;background:#fff;border:2px solid var(--ink);border-radius:18px;padding:1rem}
+.carrito h3{margin:0 0 .5rem}
+#items{list-style:none;padding:0;margin:0 0 .8rem}
+#items li{display:flex;justify-content:space-between;gap:.5rem;padding:.3rem 0;border-bottom:1px dashed var(--line);font-size:.92rem}
+#items .vacio{color:#7b6a80;border:0}
+#items button{padding:0 .5rem;font-size:.85rem}
+dl{display:grid;grid-template-columns:1fr auto;gap:.2rem;margin:0}
+dd{margin:0;text-align:right}
+.tot{font-weight:800;font-size:1.15rem;border-top:2px solid var(--ink);padding-top:.3rem}
+.cupon{display:flex;gap:.4rem;margin-top:.8rem}
+input,textarea{font:inherit;padding:.55rem .7rem;border:2px solid var(--ink);border-radius:10px;width:100%;background:#fff}
+.nota{font-size:.88rem;min-height:1.2em;margin:.4rem 0 0}
+.ofertas{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
+.oferta{background:var(--berry);color:#fff;border-radius:18px;padding:1.2rem}
+.oferta b{font-size:1.5rem;display:block}
+.contactos{display:flex;gap:1rem;flex-wrap:wrap}
+.contactos a{border:2px solid var(--ink);border-radius:999px;padding:.6rem 1.2rem;text-decoration:none;font-weight:600;background:#fff}
+form label{display:block;margin-bottom:.8rem;font-weight:600}
+#formSug,#formAuth{max-width:520px}
+#map{width:100%;height:360px;border:2px solid var(--ink);border-radius:18px}
+dialog{border:2px solid var(--ink);border-radius:18px;padding:1.5rem;width:min(92vw,400px)}
+dialog::backdrop{background:#2a123099}
+footer{text-align:center;padding:2rem;background:var(--ink);color:#fff}
+@media(max-width:800px){.hero,.layout{grid-template-columns:1fr}.carrito{position:static}}
+@media(prefers-reduced-motion:reduce){.jar span{animation:none}html{scroll-behavior:auto}}

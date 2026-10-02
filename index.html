@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dulce Limón | Mermeladas y pies de limón</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="top">
+  <a class="logo" href="#inicio">Dulce Limón</a>
+  <nav id="menu" aria-label="Principal">
+    <a href="#compras">Compras</a><a href="#precios">Precios</a><a href="#descuentos">Descuentos</a>
+    <a href="#contacto">Contacto</a><a href="#sugerencias">Sugerencias</a><a href="#mapa">Ubicación</a>
+  </nav>
+  <div class="acc">
+    <span id="usuario" hidden></span>
+    <button class="ghost" id="btnLogin">Iniciar sesión</button>
+    <button id="btnRegistro">Crear cuenta</button>
+    <button class="ghost" id="btnSalir" hidden>Salir</button>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="inicio">
+  <div>
+    <h1>Mermeladas de frutas del día y pies de limón al horno.</h1>
+    <p>Hechos en lotes pequeños en Costa Rica. Elige, agrega al carrito y pide.</p>
+    <a class="btn" href="#compras">Ver productos</a>
+  </div>
+  <div class="jar" aria-hidden="true"><span>🍓</span><span>🥧</span><span>🍋</span></div>
+</section>
+
+<section id="compras">
+  <h2>Área de compras</h2>
+  <div class="filtros">
+    <button class="chip on" data-f="todos">Todos</button>
+    <button class="chip" data-f="mermelada">Mermeladas</button>
+    <button class="chip" data-f="pie">Pies de limón</button>
+  </div>
+  <div class="layout">
+    <div id="productos" class="grid"></div>
+    <aside class="carrito" id="precios">
+      <h3>Tu carrito</h3>
+      <ul id="items"><li class="vacio">Aún no agregas productos.</li></ul>
+      <dl>
+        <dt>Subtotal</dt><dd id="subtotal">₡0</dd>
+        <dt>Descuento</dt><dd id="desc">₡0</dd>
+        <dt>Envío</dt><dd id="envio">₡0</dd>
+        <dt class="tot">Total</dt><dd class="tot" id="total">₡0</dd>
+      </dl>
+      <div class="cupon"><input id="cupon" placeholder="Código de cupón"><button id="aplicar" class="ghost">Aplicar</button></div>
+      <p id="msgCupon" class="nota"></p>
+      <button id="pedir" class="wide">Realizar pedido</button>
+      <p id="msgPedido" class="nota"></p>
+    </aside>
+  </div>
+</section>
+
+<section id="descuentos" class="band">
+  <h2>Descuentos</h2>
+  <div id="ofertas" class="ofertas"></div>
+</section>
+
+<section id="contacto">
+  <h2>Contacto</h2>
+  <div class="contactos">
+    <a id="cTel" href="#">📞 <span></span></a>
+    <a id="cMail" href="#">✉️ <span></span></a>
+    <a id="cWa" href="#" target="_blank" rel="noopener">💬 WhatsApp</a>
+  </div>
+</section>
+
+<section id="sugerencias" class="band">
+  <h2>Sugerencias</h2>
+  <form id="formSug">
+    <label>Nombre<input name="nombre" required></label>
+    <label>Tu opinión o propuesta<textarea name="mensaje" rows="4" required></textarea></label>
+    <button>Enviar sugerencia</button>
+    <p id="msgSug" class="nota"></p>
+  </form>
+</section>
+
+<section id="mapa">
+  <h2>Dónde estamos</h2>
+  <p id="localInfo"></p>
+  <iframe id="map" title="Mapa del local" loading="lazy"></iframe>
+</section>
+</main>
+
+<footer>© Dulce Limón · Hecho en Costa Rica</footer>
+
+<dialog id="dlgAuth">
+  <form id="formAuth" method="dialog">
+    <h3 id="authTitulo"></h3>
+    <label>Correo<input type="email" name="email" required autocomplete="email"></label>
+    <label>Contraseña<input type="password" name="password" minlength="6" required autocomplete="current-password"></label>
+    <button id="authOk"></button>
+    <button type="button" class="ghost" id="authCerrar">Cancelar</button>
+    <p id="msgAuth" class="nota"></p>
+  </form>
+</dialog>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
